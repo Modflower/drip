@@ -1,0 +1,37 @@
+[versions]
+annotations = "23.0.0"
+lazydfu = "0.1.3"
+
+# Minecraft
+minecraft_version = "1.19"
+minecraft_required = "1.19"
+yarn = "1.19+build.4"
+quilt_loader = "0.17.+"
+quilt_mappings = "1.19+build.1"
+
+# Plugins
+loom = "0.12.+"
+spotless = "5.+"
+quiltflower = "1.+"
+minotaur = "2.+"
+
+[libraries]
+# Minecraft & Fabric
+minecraft = { module = "com.mojang:minecraft", version.ref = "minecraft_version" }
+quilt_loader = { module = "org.quiltmc:quilt-loader", version.ref = "quilt_loader" }
+quilt_mappings = { module = "org.quiltmc:quilt-mappings", version.ref = "quilt_mappings" }
+
+# Libraries
+annotations = { module = "org.jetbrains:annotations", version.ref = "annotations" }
+
+# Mods
+lazydfu = { module = "maven.modrinth:lazydfu", version.ref = "lazydfu" }
+
+[bundles]
+compileOnly = ["annotations"]
+mod_runtime = ["lazydfu"]
+
+[plugins]
+loom = { id = "org.quiltmc.loom", version.ref = "loom" }
+spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
+minotaur = { id = "com.modrinth.minotaur", version.ref = "minotaur" }

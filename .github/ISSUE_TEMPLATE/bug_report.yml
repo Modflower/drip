@@ -1,0 +1,56 @@
+name: Bug report
+description: Create a bug report to help us improve.
+labels: [ 'bug' ]
+
+body:
+  - type: textarea
+    attributes:
+      label: Environment
+      description: |
+        What platform, side and version of Minecraft, <Mod> and Java are you using?
+
+        Example:
+          - **Minecraft**: 1.17 Server
+          - **<Mod>**: 0.0.0-beta.5
+          - **Mod Loader**: Fabric
+          - **Java**: AdoptOpenJDK 16.0.1
+      value: |
+        - **Minecraft**:
+        - **<Mod>**:
+        - **Mod Loader**:
+        - **Java**:
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: To reproduce
+      description: Steps to reproduce the behaviour.
+      placeholder: |
+        1. ...
+        2. ...
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Expected results
+      description: What behaviour did you expect?
+      placeholder: e.g. To be wither immune.
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Actual results
+      description: What behaviour did you observe instead?
+      placeholder: e.g. The wither destroyed it.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Anything else?
+      description: Crash reports, server logs, screenshots and videos should go here.
+    validations:
+      required: false
