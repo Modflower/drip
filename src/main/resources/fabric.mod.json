@@ -1,0 +1,23 @@
+{
+	"schemaVersion": 1,
+	"id": "${id}",
+	"version": "${version}",
+	"name": "Drip",
+	"description": "Allows dripstone to drop other fluids from other blocks.",
+	"authors": [
+		"Ampflower"
+	],
+	"license": [
+		"MIT"
+	],
+	"icon": "assets/${id}/pack.png",
+	"environment": "*",
+	"mixins": [
+		"drip.mixin.json"
+	],
+	"depends": {
+		"minecraft": ">=${minecraft_required}",
+		"fabricloader": ">=0.11.3",
+		"java": ">=${java}"
+	}
+}
