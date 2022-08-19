@@ -10,6 +10,11 @@
 	"license": [
 		"MIT"
 	],
+	"contact": {
+		"sources": "https://github.com/Modflower/drip",
+		"issues": "https://github.com/Modflower/drip/issues",
+		"discord": "https://discord.gg/EmPS9y9"
+	},
 	"icon": "assets/${id}/pack.png",
 	"environment": "*",
 	"mixins": [

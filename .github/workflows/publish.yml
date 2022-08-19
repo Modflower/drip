@@ -27,7 +27,7 @@ jobs:
           distribution: temurin
           java-version: 17
       - name: Build and publish with Gradle
-        run: ./gradlew build publish --no-daemon
+        run: ./gradlew build publish modrinth --no-daemon
         env:
           BUILD_RELEASE: ${{github.event.prelease == false}}
           MODRINTH_TOKEN: ${{secrets.MODRINTH}}
