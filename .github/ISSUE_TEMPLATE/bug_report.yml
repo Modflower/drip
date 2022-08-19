@@ -7,16 +7,16 @@ body:
     attributes:
       label: Environment
       description: |
-        What platform, side and version of Minecraft, <Mod> and Java are you using?
+        What platform, side and version of Minecraft, Drip and Java are you using?
 
         Example:
           - **Minecraft**: 1.17 Server
-          - **<Mod>**: 0.0.0-beta.5
+          - **Drip**: 0.0.0-beta.5
           - **Mod Loader**: Fabric
           - **Java**: AdoptOpenJDK 16.0.1
       value: |
         - **Minecraft**:
-        - **<Mod>**:
+        - **Drip**:
         - **Mod Loader**:
         - **Java**:
     validations:
