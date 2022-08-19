@@ -10,6 +10,11 @@
 	"license": [
 		"MIT"
 	],
+	"contact": {
+		"sources": "https://github.com/KJP12/drip",
+		"issues": "https://github.com/KJP12/drip/issues",
+		"discord": "https://discord.gg/EmPS9y9"
+	},
 	"icon": "assets/${id}/pack.png",
 	"environment": "*",
 	"mixins": [

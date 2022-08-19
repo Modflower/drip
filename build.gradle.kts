@@ -1,11 +1,17 @@
+import java.net.URLEncoder
+import java.nio.charset.StandardCharsets
+
 plugins {
 	java
 	`java-library`
 	alias(libs.plugins.loom)
 	`maven-publish`
 	alias(libs.plugins.spotless)
+	alias(libs.plugins.minotaur)
 }
 
+val modrinthId: String by project
+val minecraftCompatible: String by project
 val project_version: String by project
 
 val isPublish = System.getenv("GITHUB_EVENT_NAME") == "release"
@@ -88,4 +94,24 @@ tasks {
 		filesMatching("fabric.mod.json") { expand(map) }
 	}
 	withType<Jar> { from("LICENSE") }
+}
+
+modrinth {
+	token.set(System.getenv("MODRINTH_TOKEN"))
+	projectId.set(modrinthId)
+	versionType.set(
+		System.getenv("RELEASE_OVERRIDE") ?: when {
+			"alpha" in project_version -> "alpha"
+			!isRelease || '-' in project_version -> "beta"
+			else -> "release"
+		}
+	)
+	val ref = System.getenv("GITHUB_REF")
+	changelog.set(
+		System.getenv("CHANGELOG") ?: if (ref != null && ref.startsWith("refs/tags/")) "You may view the changelog at https://github.com/KJP12/drip/releases/tag/${URLEncoder.encode(ref.substring(10), StandardCharsets.UTF_8)}"
+		else "No changelog is available. Perhaps poke at https://github.com/KJP12/drip for a changelog?"
+	)
+	uploadFile.set(tasks.remapJar.get())
+	gameVersions.set(minecraftCompatible.split(","))
+	loaders.addAll("fabric", "quilt")
 }
