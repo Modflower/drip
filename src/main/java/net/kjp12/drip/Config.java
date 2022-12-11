@@ -8,8 +8,8 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.Fluids;
+import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 import org.slf4j.Logger;
 
 import java.io.IOException;
@@ -107,7 +107,7 @@ public class Config {
 		entries = new HashMap<>();
 		for (Map.Entry<Identifier, EntryRaw> entry : entriesRaw.entrySet()) {
 			final var id = entry.getKey();
-			final var block = Registry.BLOCK.getOrEmpty(id);
+			final var block = Registries.BLOCK.getOrEmpty(id);
 			final var value = entry.getValue().toEntry();
 			if (block.isEmpty()) {
 				logger.warn("Unknown block {} for {}", id, value);
@@ -126,7 +126,7 @@ public class Config {
 	private void startWrite() {
 		Objects.requireNonNull(entries, "Bugcheck failure");
 		entriesRaw = new HashMap<>();
-		entries.forEach((block, entry) -> entriesRaw.put(Registry.BLOCK.getId(block), entry.toRaw()));
+		entries.forEach((block, entry) -> entriesRaw.put(Registries.BLOCK.getId(block), entry.toRaw()));
 	}
 
 	/**
@@ -153,7 +153,7 @@ public class Config {
 		 * Converts the record into a regular {@link Entry} for runtime usage.
 		 */
 		Entry toEntry() {
-			return new Entry(Registry.FLUID.get(fluid), replace);
+			return new Entry(Registries.FLUID.get(fluid), replace);
 		}
 	}
 
@@ -170,7 +170,7 @@ public class Config {
 		 * Converts the record into {@link EntryRaw} for write-time usage.
 		 */
 		EntryRaw toRaw() {
-			return new EntryRaw(Registry.FLUID.getId(fluid), replace);
+			return new EntryRaw(Registries.FLUID.getId(fluid), replace);
 		}
 	}
 

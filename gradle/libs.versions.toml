@@ -3,14 +3,14 @@ annotations = "23.0.0"
 lazydfu = "0.1.3"
 
 # Minecraft
-minecraft_version = "1.19"
-minecraft_required = "1.19"
-yarn = "1.19+build.4"
+minecraft_version = "1.19.3"
+minecraft_required = "1.19.3"
+yarn = "1.19.3+build.2"
 quilt_loader = "0.17.+"
-quilt_mappings = "1.19+build.1"
+quilt_mappings = "1.19.3+build.1"
 
 # Plugins
-loom = "0.12.+"
+loom = "1.+"
 spotless = "5.+"
 quiltflower = "1.+"
 minotaur = "2.+"
