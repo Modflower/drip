@@ -25,7 +25,7 @@ import java.util.Objects;
  * The configuration class for Drip.
  *
  * @author Ampflower
- * @since ${version}
+ * @since 0.0.0
  **/
 public class Config {
 	private static final Logger logger = LogUtils.getLogger();

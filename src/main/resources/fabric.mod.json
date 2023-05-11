@@ -3,7 +3,7 @@
 	"id": "${id}",
 	"version": "${version}",
 	"name": "Drip",
-	"description": "Allows dripstone to drop other fluids from other blocks.",
+	"description": "Allows dripstone to drip other fluids from other blocks.",
 	"authors": [
 		"Ampflower"
 	],

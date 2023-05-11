@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.ModifyArg;
  * various blocks.
  *
  * @author Ampflower
- * @since ${version}
+ * @since 0.0.0
  **/
 @Mixin(PointedDripstoneBlock.class)
 public class MixinPointedDripstoneBlock {
