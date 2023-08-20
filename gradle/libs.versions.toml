@@ -7,10 +7,9 @@ minecraft_version = "1.19"
 minecraft_required = "1.19"
 yarn = "1.19+build.4"
 quilt_loader = "0.17.+"
-quilt_mappings = "1.19+build.1"
 
 # Plugins
-loom = "0.12.+"
+loom = "1.+"
 spotless = "5.+"
 quiltflower = "1.+"
 minotaur = "2.+"
@@ -19,7 +18,7 @@ minotaur = "2.+"
 # Minecraft & Fabric
 minecraft = { module = "com.mojang:minecraft", version.ref = "minecraft_version" }
 quilt_loader = { module = "org.quiltmc:quilt-loader", version.ref = "quilt_loader" }
-quilt_mappings = { module = "org.quiltmc:quilt-mappings", version.ref = "quilt_mappings" }
+yarn = { module = "net.fabricmc:yarn", version.ref = "yarn" }
 
 # Libraries
 annotations = { module = "org.jetbrains:annotations", version.ref = "annotations" }

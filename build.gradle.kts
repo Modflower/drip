@@ -46,11 +46,7 @@ repositories {
 
 dependencies {
 	minecraft(libs.minecraft)
-	// TODO: Migrate to QM when possible
-	mappings("net.fabricmc", "yarn", libs.versions.yarn.get(), classifier = "v2")
-	// mappings(loom.layered {
-	// 	addLayer(quiltMappings.mappings("org.quiltmc:quilt-mappings:${libs.versions.quilt.mappings.get()}:v2"))
-	// })
+	mappings(variantOf(libs.yarn) { classifier("v2") })
 	modImplementation(libs.quilt.loader)
 	modRuntimeOnly(libs.bundles.mod.runtime)
 }
